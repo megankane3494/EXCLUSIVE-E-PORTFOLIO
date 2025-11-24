@@ -6,7 +6,17 @@
     <title>Megan Kane</title>
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/8edc3486e0.js" crossorigin="anonymous"></script>
-    <script src="./script.js" defer></script>
+    <script src="./index.js" defer></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "v0M6JB80T49lcdZ4K",
+      });
+   })();
+</script>
 </head>
 <body>
     <section id="landing-page">
@@ -15,7 +25,7 @@
                 <img class="nav__logo" src="./assets/MK_Logo.svg" alt="Megan Kane Logo">
             </figure>
             <ul class="nav__link--list">
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class = "
                     nav__link--anchor
                     link__hover-effect
@@ -29,14 +39,14 @@
                     link__hover-effect--black
                     ">Projects</a>
                 </li>
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black
                     ">Contact</a>
                 </li>
-                <li class="nav__link click">
+                <li class="nav__link click" onclick="toggleContrast()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect
@@ -45,14 +55,12 @@
                 </li>
             </ul>
         </nav>
-        <!-- <div class="container">
-            <div class="row"> -->
                 <header class="header">
                     <div class="header__content">
                         <h1 class="title">Hey</h1>
                         <h1 class="title title--secondary">I'm Megan.</h1>
-                        <p class="header__para">I'm a <strong class="red">Frontend Web Developer</strong> with a strong passion for designing and developing interactive web applications that are both visually appealing and user-friendly.
-                            <br> Here's a bit more <strong class="red">about me.</strong>
+                        <p class="header__para">I'm a <strong class="red"> Frontend Developer</strong> with a strong passion for designing and developing interactive web applications that are both visually appealing and user-friendly.
+                            <br> Here's a bit more <strong class="red click" onclick="toggleModal()">about me.</strong>
                         </p>
                         <ul class="header__socials">
                             <li class="social__link">
@@ -75,7 +83,7 @@
                         </ul>
                     </div>
                 </header>
-                <button class="mail__btn click">
+                <button class="mail__btn click" onclick="toggleModal()" >
                     <a class="mail__btn--anchor" href="#">
                         <i class="fa-solid fa-envelope"></i>
                     </a>
@@ -83,13 +91,71 @@
                 <a href="#projects" class="scroll">
                     <div class="scroll__icon click"></div>
                 </a>
-            <!-- </div>
-        </div> -->
+                <div class="modal">
+                    <div class="modal__half modal__about">
+                        <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+                        <h4 class="modal__subtitle modal__subtitle--about"> Frontend Developer.</h4>
+                        <p class="modal__para">
+                            I'm a tech savvy professional with a history in TV production looking to pivot to a
+                            new career in <strong class="red">frontend development.</strong>
+                            <br>
+                            <br>
+                            I'm currently building new web development skills in <strong class="red">HTML, CSS, JavaScript, and React.</strong> I have a proven ability to lead teams and workflows and manage projects in <strong class="red">high-pressure settings.</strong>
+                        </p>
+                         <div class="modal__languages">
+                        <figure class="modal__language">
+                            <img class="modal__langauge--img" src="./assets/html.svg" alt="html logo">
+                            <span class="language__name">HTML</span>
+                        </figure>
+                         <figure class="modal__language">
+                            <img class="modal__langauge--img" src="./assets/css.svg" alt="css logo">
+                            <span class="language__name">CSS</span>
+                        </figure>
+                         <figure class="modal__language">
+                            <img class="modal__langauge--img" src="./assets/javascript.svg" alt="JavaScript logo">
+                            <span class="language__name">JavaScript</span>
+                        </figure>
+                         <figure class="modal__language">
+                            <img class="modal__langauge--img" src="./assets/react.svg" alt="React logo">
+                            <span class="language__name">React</span>
+                        </figure>
+                    </div>
+                    </div>
+                    <div class="modal__half modal__contact">
+                        <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
+                        <h3 class="modal__title modal__title--contact">Let's chat!</h3>
+                        <h4 class="modal__subtitle modal__subtitle--contact">I'm excited to connect.</h4>
+                        <form id="contact__form" onsubmit="contact(event)">
+                            <div class="form__item">
+                                <label class="form__item--label">Name</label>
+                                <input class="input" name="user_name" type="text"></input>
+                            </div>
+
+                            <div class="form__item">
+                                <label class="form__item--label">Email</label>
+                                <input class="input" name="user_email" type="text"></input>
+                            </div>
+
+                            <div class="form__item">
+                                <label class="form__item--label">Message</label>
+                                <textarea class="input" name="message" type="text"></textarea>
+                            </div>
+                            <button id="contact__submit" class="form__submit">Send it my way</button>
+                        </form>
+                        <div class="modal__overlay modal__overlay--loading">
+                            <i class="fa-solid fa-spinner"></i>
+                        </div>
+                        <div class="modal__overlay modal__overlay--success">
+                            Thanks for the message! I'm looking forward to speaking with you soon.
+                        </div>
+                    </div>
+                </div>
+
     </section>
     <section id="projects">
         <div class="container">
             <div class="row">
-                <h1 class="section_title">Here are some of my <strong class="red">projects</strong></h1>
+                <h1 class="section__title">Here are some of my <strong class="red">projects</strong></h1>
                 <ul class="project__list">
                     <li class="project">
                         <div class="project__wrapper">
@@ -141,7 +207,7 @@
                     link__hover-effect--white
                     ">LinkedIn</a>
                 </li>
-                <li class="footer__menu--link">
+                <li class="footer__menu--link" onclick="toggleModal()">
                     <a href="#"
                     class="
                     footer__menu--anchor
