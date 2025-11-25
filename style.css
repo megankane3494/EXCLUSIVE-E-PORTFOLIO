@@ -63,7 +63,7 @@ input:hover, textarea:hover {
 }
 
 input:focus, textarea:focus {
-    border-color: #f93d3a;
+    border-color: #5D3EFF;
 }
 
 .section__title {
@@ -101,8 +101,8 @@ input:focus, textarea:focus {
     color: #3D98D6;
 }
 
-.red {
-    color: #f93d3a;
+.purple {
+    color: #5D3EFF;
 }
 
 .title {
@@ -114,7 +114,7 @@ input:focus, textarea:focus {
 }
 
 .title--secondary {
-    color: #f93d3a ;
+    color: #5D3EFF ;
 }
 
 .link__hover-effect {
@@ -275,7 +275,7 @@ nav,
 .social__link {
     margin-top: 16px;
     margin-right: 16px;
-    background-color: #f93d3a;
+    background-color: #5D3EFF;
     padding: 12px;
     border-radius: 9999px;
     display: flex;
@@ -455,8 +455,8 @@ nav,
 }
 
 .form__submit {
-    background-color: #f93d3a;
-    border: 2px solid #f93d3a;
+    background-color: #5D3EFF;
+    border: 2px solid #5D3EFF;
     color: white;
     font-weight: 700;
     width: 100%;
@@ -472,8 +472,8 @@ nav,
 }
 
 .form__submit:active {
-    border-color:#f93d3a;
-    color: #f93d3a;
+    border-color:#5D3EFF;
+    color: #5D3EFF;
 }
 
 .modal__overlay {
@@ -508,7 +508,7 @@ nav,
 }
 
 .modal__overlay--success {
-    background-color: #3D98D6;
+    background-color: #5D3EFF;
     font-size: 40px;
     font-weight: 700;
     text-align: center;
@@ -606,10 +606,6 @@ nav,
 
 }
 
-.project__description--links {
-
-}
-
 .project__description--anchor {
     color: #ffffff;
     font-size: 20px;
@@ -622,6 +618,7 @@ nav,
     background-color: #242424;
     display: flex;
     padding: 4% 0;
+    position: relative;
 }
 
 .footer__row {
@@ -663,4 +660,113 @@ nav,
     text-align: center;
     margin-top: 24px;
     color: white;
+}
+
+/* SHAPE SECTION */
+
+.shape {
+    position: fixed;
+}
+
+.shape--0 {
+    top: 15vh;
+    left: 5vw;
+}
+
+.shape--1 {
+    top: 15vh;
+    left: 50vw;
+}
+
+.shape--2 {
+    top: 15vh;
+    left: 80vw;
+}
+
+.shape--3 {
+    top: 50vh;
+    left: 5vw;
+}
+
+.shape--4 {
+    top: 50vh;
+    left: 50vw;
+}
+
+.shape--5 {
+    top: 50vh;
+    left: 80vw;
+}
+
+.shape--6 {
+    top: 80vh;
+    left: 5vw;
+}
+
+.shape--7 {
+    top: 80vh;
+    left: 50vw;
+}
+
+.shape--8 {
+    top: 80vh;
+    left: 80vw;
+}
+
+/* small phones, tablets, large smart phones */
+@media (max-width: 768px) {
+.title {
+    font-size: 80px;
+}
+.header__para {
+    font-size: 20px;
+}
+
+.modal {
+    top:0;
+    left: 0;
+    transform: none;
+    height: auto;
+    width: 100%;
+    flex-direction: column-reverse;
+    border-radius: 0;  
+}
+
+.modal__half {
+    width: 100%;
+}
+}
+
+/* small phones */
+@media (max-width: 480px) {
+    .title {
+        font-size: 52px;
+    }
+
+    .header__para {
+        font-size: 18px;
+    }
+
+    .nav__link:first-child {
+        display: none;
+    }
+
+    .project__description--para {
+        display: none;
+    }
+
+    .project__description {
+        left:0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .project__description--subtitle {
+        margin-bottom: 8px;
+    }
+
+    .modal__half {
+        padding: 40px;
+    }
 }
