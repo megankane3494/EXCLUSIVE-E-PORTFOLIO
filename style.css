@@ -70,6 +70,7 @@ input:focus, textarea:focus {
     text-align: center;
     font-size: 48px;
     margin-bottom: 60px;
+    z-index: 9999;
 }
 
 .click {
@@ -249,6 +250,7 @@ nav,
 
 .header {
     position: absolute;
+    z-index: 100;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
